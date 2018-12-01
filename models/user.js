@@ -8,4 +8,4 @@ var ObrasPublicasSchema = Schema({
     año:Number,
 });
 
-module.exports = mongoose.model(ObrasPublicas,ObrasPublicasSchema);
+module.exports = mongoose.model("ObrasPublicas",ObrasPublicasSchema);
