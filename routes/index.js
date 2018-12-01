@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
 router.post('/create',(req,res,next)=>{
   console.log(req.body);
   var newObra = new ObrasModel();
-  newObra.id = req.body.id;
   newObra.nombre = req.body.nombre;
   newObra.precio = req.body.precio;
   newObra.año = req.body.año;
@@ -31,7 +30,7 @@ router.put('/update/:id', (req,res,next)=>{
   ObrasModel.findByIdAndUpdate(obraId, updateObra,{new:true}, (error,obra)=>{
     if(error) return res.status(500).json({success:false, message: "No se guardo"});
 
-    if(obra) return res.status(200).json({success:true, message:"Se guardo", obra});
+    if(obra) return res.status(200).json({success:true, message:"Se actualizo", obra});
   });
 });
 
@@ -42,7 +41,7 @@ router.delete('/delete/:id',(req,res,next)=>{
   ObrasModel.findByIdAndDelete(obraId,(error,obra)=>{
     if(error) return res.status(500).json({success:false, message: "No se guardo"});
 
-    if(obra) return res.status(200).json({success:true, message:"Se guardo", obra});
+    if(obra) return res.status(200).json({success:true, message:"Se borro", obra});
   });
 });
 
@@ -51,7 +50,7 @@ router.get('/obra/:id', (req,res,next)=>{
   ObrasModel.findById(req.params.id, (error,obra)=>{
     if(error) return res.status(500).json({success:false, message: "No se guardo"});
 
-    if(obra) return res.status(200).json({success:true, message:"Se guardo", obra});
+    if(obra) return res.status(200).json({success:true, message:"Se mostro una", obra});
   });
 });
 
@@ -60,7 +59,7 @@ router.get('/getObras', (req,res,next)=>{
   ObrasModel.find({},(error,obras)=>{
     if(error) return res.status(500).json({success:false, message: "No se guardo"});
 
-    if(obras) return res.status(200).json({success:true, message:"Se guardo", obra});
+    if(obras) return res.status(200).json({success:true, message:"Se mostraron todas", obras});
   });
 });
 module.exports = router;

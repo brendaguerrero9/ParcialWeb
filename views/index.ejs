@@ -5,7 +5,30 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <form action="/create" method="post">
+      <label for="id">Id</label>
+      <input type="text" name="id" id="id">
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" id="nombre">
+      <label for="precio">Precio</label>
+      <input type="text" name="precio" id="precio">
+      <label for="año">Año</label>
+      <input type="text" name="año" id="año">
+      <button type="button" id="guardar">Agregar</button>
+    </form>
+    <br>
+    <table class="table">
+      <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Año</th>
+        <th>Opciones</th>
+      </thead>
+
+      <tbody class="t-body">
+
+      </tbody>
+    </table>
   </body>
 </html>
