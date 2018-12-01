@@ -23,6 +23,18 @@ router.post('/create',(req,res,next)=>{
   });
 });
 
+//Creando ruta para modificar
+router.put('/update/:id', (req,res,next)=>{
+  var obraId = req.params.id;
+  var updateObra = req.body;
+
+  ObrasModel.findByIdAndUpdate(obraId, updateObra,{new:true}, (error,obra)=>{
+    if(error) return res.status(500).json({success:false, message: "No se guardo"});
+
+    if(obra) return res.status(200).json({success:true, message:"Se guardo", obra});
+  });
+});
+
 
 
 module.exports = router;
