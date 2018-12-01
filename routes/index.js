@@ -54,4 +54,13 @@ router.get('/obra/:id', (req,res,next)=>{
     if(obra) return res.status(200).json({success:true, message:"Se guardo", obra});
   });
 });
+
+//Creando ruta para mostrar todas las obras
+router.get('/getObras', (req,res,next)=>{
+  ObrasModel.find({},(error,obras)=>{
+    if(error) return res.status(500).json({success:false, message: "No se guardo"});
+
+    if(obras) return res.status(200).json({success:true, message:"Se guardo", obra});
+  });
+});
 module.exports = router;
