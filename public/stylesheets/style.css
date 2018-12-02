@@ -7,6 +7,15 @@ a {
   color: #00B7FF;
 }
 
-table, th, tr{
-  border: 1px solid black;
+table, th, tr, td{
+  border: 1px solid rgb(216, 55, 55);
+}
+
+h1{
+  color: #00B7FF;
+}
+
+input{
+  padding: 5px;
+  background-color: antiquewhite;
 }
